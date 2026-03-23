@@ -4,7 +4,7 @@
 [![NuGet](https://img.shields.io/nuget/v/Philiprehberger.StringTemplate.svg)](https://www.nuget.org/packages/Philiprehberger.StringTemplate)
 [![License](https://img.shields.io/github/license/philiprehberger/dotnet-string-template)](LICENSE)
 
-Named placeholder string interpolation from objects, dictionaries, or key-value pairs with formatting and default values.
+Named placeholder string interpolation from objects and dictionaries with formatting and defaults.
 
 ## Installation
 
