@@ -2,8 +2,7 @@
 
 [![CI](https://github.com/philiprehberger/dotnet-string-template/actions/workflows/ci.yml/badge.svg)](https://github.com/philiprehberger/dotnet-string-template/actions/workflows/ci.yml)
 [![NuGet](https://img.shields.io/nuget/v/Philiprehberger.StringTemplate.svg)](https://www.nuget.org/packages/Philiprehberger.StringTemplate)
-[![License](https://img.shields.io/github/license/philiprehberger/dotnet-string-template)](LICENSE)
-[![Sponsor](https://img.shields.io/badge/sponsor-GitHub%20Sponsors-ec6cb9)](https://github.com/sponsors/philiprehberger)
+[![Last updated](https://img.shields.io/github/last-commit/philiprehberger/dotnet-string-template)](https://github.com/philiprehberger/dotnet-string-template/commits/main)
 
 Named placeholder string interpolation from objects and dictionaries with formatting and defaults.
 
@@ -80,6 +79,24 @@ var result = Template.Render("Price: {price:C2}, Date: {date:yyyy-MM-dd}", data)
 dotnet build src/Philiprehberger.StringTemplate.csproj --configuration Release
 ```
 
+## Support
+
+If you find this project useful:
+
+⭐ [Star the repo](https://github.com/philiprehberger/dotnet-string-template)
+
+🐛 [Report issues](https://github.com/philiprehberger/dotnet-string-template/issues?q=is%3Aissue+is%3Aopen+label%3Abug)
+
+💡 [Suggest features](https://github.com/philiprehberger/dotnet-string-template/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement)
+
+❤️ [Sponsor development](https://github.com/sponsors/philiprehberger)
+
+🌐 [All Open Source Projects](https://philiprehberger.com/open-source-packages)
+
+💻 [GitHub Profile](https://github.com/philiprehberger)
+
+🔗 [LinkedIn Profile](https://www.linkedin.com/in/philiprehberger)
+
 ## License
 
-MIT
+[MIT](LICENSE)
