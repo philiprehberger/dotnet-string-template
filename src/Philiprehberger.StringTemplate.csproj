@@ -11,7 +11,7 @@
 
     <!-- Package metadata -->
     <PackageId>Philiprehberger.StringTemplate</PackageId>
-    <Version>0.1.2</Version>
+    <Version>0.2.0</Version>
     <Authors>Philip Rehberger</Authors>
     <Description>Named placeholder string interpolation from objects and dictionaries with formatting and defaults.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>

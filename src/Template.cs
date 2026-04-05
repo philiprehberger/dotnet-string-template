@@ -17,6 +17,62 @@ public static class Template
     private static readonly TemplateOptions DefaultOptions = new();
 
     /// <summary>
+    /// Determines whether the template string contains any <c>{name}</c> placeholders.
+    /// Escaped braces (<c>{{</c> and <c>}}</c>) are not considered placeholders.
+    /// </summary>
+    /// <param name="template">The template string to inspect.</param>
+    /// <returns><c>true</c> if the template contains at least one placeholder; otherwise <c>false</c>.</returns>
+    /// <exception cref="ArgumentNullException">
+    /// Thrown when <paramref name="template"/> is <c>null</c>.
+    /// </exception>
+    public static bool HasPlaceholders(string template)
+    {
+        ArgumentNullException.ThrowIfNull(template);
+
+        var segments = TemplateParser.Parse(template);
+        return segments.Any(s => s.IsPlaceholder);
+    }
+
+    /// <summary>
+    /// Extracts the names of all placeholders found in the template string.
+    /// Format specifiers are stripped (e.g. <c>{price:C2}</c> yields <c>"price"</c>).
+    /// Escaped braces (<c>{{</c> and <c>}}</c>) are ignored.
+    /// </summary>
+    /// <param name="template">The template string to inspect.</param>
+    /// <returns>An array of distinct placeholder names in the order they first appear.</returns>
+    /// <exception cref="ArgumentNullException">
+    /// Thrown when <paramref name="template"/> is <c>null</c>.
+    /// </exception>
+    public static string[] ExtractPlaceholders(string template)
+    {
+        ArgumentNullException.ThrowIfNull(template);
+
+        var segments = TemplateParser.Parse(template);
+        var names = new List<string>();
+        var seen = new HashSet<string>(StringComparer.Ordinal);
+
+        foreach (var segment in segments)
+        {
+            if (!segment.IsPlaceholder)
+            {
+                continue;
+            }
+
+            var colonIndex = segment.Value.IndexOf(':');
+            var name = colonIndex == -1
+                ? segment.Value.Trim()
+                : segment.Value[..colonIndex].Trim();
+
+            if (seen.Add(name))
+            {
+                names.Add(name);
+            }
+        }
+
+        return names.ToArray();
+    }
+
+    /// <summary>
     /// Renders a template by replacing placeholders with values from the specified object's properties.
     /// </summary>
     /// <param name="template">The template string containing named placeholders.</param>

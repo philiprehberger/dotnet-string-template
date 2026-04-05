@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.0 (2026-04-05)
+
+- Add `Template.HasPlaceholders()` to detect whether a template contains any placeholders
+- Add `Template.ExtractPlaceholders()` to return an array of placeholder names from a template
+
 ## 0.1.2 (2026-03-31)
 
 - Standardize README to 3-badge format with emoji Support section
